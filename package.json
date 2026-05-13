@@ -1,0 +1,10 @@
+{
+  "name": "ava_solid_arch",
+  "private": true,
+  "scripts": {
+    "install:backend": "cd backend && npm install",
+    "dev": "cd backend && npm run dev",
+    "start": "cd backend && npm start"
+  }
+}
+

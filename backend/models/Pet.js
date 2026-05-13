@@ -7,35 +7,44 @@ const Pet = mongoose.model(
         {
             name: {
                 type: String,
-                require: true
+                required: true
             },
             age: {
                 type: Number,
-                require: true
+                required: true
             },
             weight: {
                 type: Number,
-                require: true
+                required: true
             },
             color: {
                 type: String,
-                require: true
+                required: true
             },
-            image: {
-                type: Array,
-                require: true
+            images: {
+                type: [String],
+                required: true
             },
             available: {
                 type: Boolean,
-                require: true
+                default: true
             },
             user: {
-                type: Object,
-                adopter: Object
-            }
+                type: Schema.Types.ObjectId,
+                ref: 'User',
+                required: true,
+            },
+            adopter: {
+                type: Schema.Types.ObjectId,
+                ref: 'User',
+            },
+            adopted: {
+                type: Boolean,
+                default: false,
+            },
         },
         {
-            timestamp: true
+            timestamps: true
         }
     )
 )
